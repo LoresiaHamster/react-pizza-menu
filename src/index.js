@@ -76,13 +76,19 @@ function Menu() {
       <h2>Our menu</h2>
 
       {numPizzas > 0 ? (
-        <ul className='pizzas'>
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to shoose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+          <ul className='pizzas'>
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
-        <p>no pizzas</p>
+        <p>Still working on our menu.</p>
       )}
     </main>
   );
@@ -96,7 +102,7 @@ function Pizza({ pizzaObj }) {
       <img src={pizzaObj.photoName} alt={pizzaObj.name}></img>
       <div>
         <h3>{pizzaObj.name}</h3>
-        <p>{pizzaObj.ngredients}</p>
+        <p>{pizzaObj.ingredients}</p>
         <span>{pizzaObj.price + 2}</span>
       </div>
     </li>
